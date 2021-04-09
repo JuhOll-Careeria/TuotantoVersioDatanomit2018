@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: afa2f4eb69da18743b1401f21a77de46
-=======
-guid: 9ddf9e49ac494a942b8da9baac9b09d7
->>>>>>> Player
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -83,20 +79,12 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline:
-<<<<<<< HEAD
     - - {x: 168.5, y: -153.5}
-=======
-    - - {x: 168.5, y: -149.5}
-      - {x: 168.5, y: -153.5}
->>>>>>> Player
       - {x: -167.5, y: -153.5}
       - {x: -167.5, y: -149.5}
       - {x: -0.5, y: 145.5}
       - {x: 2.5, y: 145.5}
-<<<<<<< HEAD
       - {x: 168.5, y: -149.5}
-=======
->>>>>>> Player
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000

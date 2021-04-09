@@ -47,7 +47,7 @@ public class PlayerMoment : MonoBehaviour
             {
             StopCoroutine(dashCoroutine);
             }
-            dashCoroutine = Dash(.1f, 3);
+            dashCoroutine = Dash(.2f, 3);
             StartCoroutine(dashCoroutine);
             Dash();
         }
@@ -57,7 +57,7 @@ public class PlayerMoment : MonoBehaviour
     {
         if (isDashing)
         {
-            myBody.AddForce(new Vector2(direction * 80, 0), ForceMode2D.Impulse);
+            myBody.AddForce(new Vector2(direction * 60, 0), ForceMode2D.Impulse);
         }
     }
 
@@ -87,7 +87,7 @@ public class PlayerMoment : MonoBehaviour
             {
                 StopCoroutine(dashCoroutine);
             }
-            dashCoroutine = Dash(.1f, 2);
+            dashCoroutine = Dash(.2f, 2);
             StartCoroutine(dashCoroutine);
         }
 

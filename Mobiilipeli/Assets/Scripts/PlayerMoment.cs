@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMoment : MonoBehaviour
 {
+    public Animator animator;
     public float speed = 10, jumpVelocity = 10;
     public LayerMask playerMask;
     float direction = 1;
@@ -28,7 +29,9 @@ public class PlayerMoment : MonoBehaviour
     }
 
     void Update()
-    {        
+    {
+        
+
         isGrounded = Physics2D.Linecast(myTrans.position, tagGround.position, playerMask);
 
         if (hInput != 0)
@@ -36,7 +39,7 @@ public class PlayerMoment : MonoBehaviour
             direction = hInput;
         }
 
-        //Move(Input.GetAxisRaw("Horizontal"));
+        Move(Input.GetAxisRaw("Horizontal"));
         if (Input.GetButtonDown("Jump"))
         Jump();
         Move(hInput);
@@ -72,11 +75,14 @@ public class PlayerMoment : MonoBehaviour
     {
         if (isGrounded)
             myBody.velocity += jumpVelocity * Vector2.up;
+
+        animator.SetBool("IsJumping", true);
     }
 
     public void StartMoving(float horizonalInput)
     {
         hInput = horizonalInput;
+        animator.SetFloat("Speed", Mathf.Abs(hInput));
     }
 
     public void Dash()
@@ -87,7 +93,7 @@ public class PlayerMoment : MonoBehaviour
             {
                 StopCoroutine(dashCoroutine);
             }
-            dashCoroutine = Dash(.2f, 2);
+            dashCoroutine = Dash(.2f, 3);
             StartCoroutine(dashCoroutine);
         }
 

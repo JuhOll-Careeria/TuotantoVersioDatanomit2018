@@ -13,6 +13,7 @@ public class PlayerMoment : MonoBehaviour
     bool isGrounded = false;
     bool isDashing;
     bool canDash = true;
+    private bool facingRight;
 
     Rigidbody2D myBody;
     Transform myTrans, tagGround;
@@ -22,6 +23,7 @@ public class PlayerMoment : MonoBehaviour
 
     void Start()
     {
+        facingRight = true;
         myBody = this.GetComponent<Rigidbody2D>();
         myTrans = this.transform;
         tagGround = GameObject.Find(this.name + "/tag_ground").transform;
@@ -43,6 +45,7 @@ public class PlayerMoment : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         Jump();
         Move(hInput);
+        Flip(hInput);
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash == true)
         {
@@ -53,6 +56,33 @@ public class PlayerMoment : MonoBehaviour
             dashCoroutine = Dash(.2f, 3);
             StartCoroutine(dashCoroutine);
             Dash();
+        }
+
+        if (myBody.velocity.y == 0)
+        {
+            animator.SetBool("IsJumping", false);
+            animator.SetBool("IsFalling", false);
+        }
+
+        if(myBody.velocity.y > 0)
+        {
+            animator.SetBool("IsJumping", true);
+        }
+
+        if(myBody.velocity.y < 0)
+        {
+            animator.SetBool("IsJumping", false);
+            animator.SetBool("IsFalling", true);
+        }
+
+        if(isDashing == true)
+        {
+            animator.SetBool("IsDashing", true);
+        }
+
+        else
+        {
+            animator.SetBool("IsDashing", false);
         }
         
     }
@@ -74,15 +104,35 @@ public class PlayerMoment : MonoBehaviour
     public void Jump()
     {
         if (isGrounded)
+        {
+            animator.SetTrigger("TakeOff");
             myBody.velocity += jumpVelocity * Vector2.up;
+        }
 
-        animator.SetBool("IsJumping", true);
+        else
+        {
+            animator.SetBool("IsJumping", true);
+        }
     }
 
     public void StartMoving(float horizonalInput)
     {
         hInput = horizonalInput;
         animator.SetFloat("Speed", Mathf.Abs(hInput));
+    }
+
+    private void Flip(float hInput)
+    {
+        if (hInput > 0 && !facingRight || hInput < 0 && facingRight)
+        {
+            facingRight = !facingRight;
+
+            Vector3 theScale = transform.localScale;
+
+            theScale.x *= -1;
+
+            transform.localScale = theScale;
+        }
     }
 
     public void Dash()
@@ -96,8 +146,6 @@ public class PlayerMoment : MonoBehaviour
             dashCoroutine = Dash(.2f, 3);
             StartCoroutine(dashCoroutine);
         }
-
-
     }
 
     IEnumerator Dash(float dashDuration, float dashCooldown)

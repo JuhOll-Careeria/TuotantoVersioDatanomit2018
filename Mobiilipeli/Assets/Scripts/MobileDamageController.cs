@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MobileDamageController : MonoBehaviour
 {
-    [SerializeField] private float trapDamage;
+    [SerializeField] private float enemyDamage;
     [SerializeField] private MobileHealthController healthController;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,7 +16,7 @@ public class MobileDamageController : MonoBehaviour
     }
     void Damage()
     {
-        healthController.playerHealth = healthController.playerHealth - trapDamage;
+        healthController.currentHealth = healthController.currentHealth - enemyDamage;
         healthController.UpdateHealth();
     }
 }

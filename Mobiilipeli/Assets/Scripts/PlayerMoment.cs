@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMoment : MonoBehaviour
 {
+    public static PlayerMoment Instance = null;
+
     public Animator animator;
     public float speed = 10, jumpVelocity = 10;
     public LayerMask playerMask;
@@ -20,6 +22,19 @@ public class PlayerMoment : MonoBehaviour
     float hInput = 0;
     IEnumerator dashCoroutine;
 
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+
+        else if (Instance != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+
+       //evelManager.Instance.Player = this;
+    }
 
     void Start()
     {

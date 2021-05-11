@@ -10,11 +10,17 @@ public class MobileHealthController : MonoBehaviour
 
     private void Start()
     {
+        playerHealth = 3;
         UpdateHealth();
     }
 
     public void UpdateHealth()
     {
         healthText.text = playerHealth.ToString("0");
+
+        if (healthText.text == "0")
+        {
+            Destroy(gameObject);
+        }
     }
 }

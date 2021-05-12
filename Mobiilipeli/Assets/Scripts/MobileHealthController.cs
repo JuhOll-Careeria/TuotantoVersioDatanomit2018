@@ -29,11 +29,12 @@ public class MobileHealthController : MonoBehaviour
     {
         Health();
 
-        UpdateHealth();
+        
     }
     public void Health()
     {
         currentHealth = maxHealth;
+        UpdateHealth();
     }
 
     public void UpdateHealth()

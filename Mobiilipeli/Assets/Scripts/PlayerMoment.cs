@@ -28,10 +28,10 @@ public class PlayerMoment : MonoBehaviour
         if (Instance == null)
             Instance = this;
 
-        else if (Instance != this)
-            Destroy(gameObject);
+        //else if (Instance != this)
+            //Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
        //evelManager.Instance.Player = this;
     }
@@ -142,11 +142,13 @@ public class PlayerMoment : MonoBehaviour
         {
             facingRight = !facingRight;
 
-            Vector3 theScale = transform.localScale;
+            transform.Rotate(0f, 180f, 0f);
 
-            theScale.x *= -1;
+            //Vector3 theScale = transform.localScale;
 
-            transform.localScale = theScale;
+            //theScale.x *= -1;
+
+            //transform.localScale = theScale;
         }
     }
 

@@ -22,6 +22,9 @@ public class PlayerMoment : MonoBehaviour
     float hInput = 0;
     IEnumerator dashCoroutine;
 
+    //LevelManager lm;
+    private LevelManager lm;
+
 
     private void Awake()
     {
@@ -43,6 +46,7 @@ public class PlayerMoment : MonoBehaviour
         myTrans = this.transform;
         tagGround = GameObject.Find(this.name + "/tag_ground").transform;
         normalGravity = myBody.gravityScale;
+        lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
     }
 
     void Update()
@@ -164,6 +168,27 @@ public class PlayerMoment : MonoBehaviour
             StartCoroutine(dashCoroutine);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("coin"))
+        {
+            Destroy(collision.gameObject);
+            lm.score += 100;
+        }
+    }
+
+
+    //Coin systeemi
+
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //if(other.tag == "coin")
+    //{
+    //lm.CoinCollected();
+    //Destroy(other.gameObject);
+    //}
+    //}
 
     IEnumerator Dash(float dashDuration, float dashCooldown)
     {

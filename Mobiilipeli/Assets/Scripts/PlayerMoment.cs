@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMoment : MonoBehaviour
 {
@@ -176,7 +177,13 @@ public class PlayerMoment : MonoBehaviour
             Destroy(collision.gameObject);
             lm.score += 100;
         }
+
+        if (collision.CompareTag("door"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
+
 
 
     //Coin systeemi

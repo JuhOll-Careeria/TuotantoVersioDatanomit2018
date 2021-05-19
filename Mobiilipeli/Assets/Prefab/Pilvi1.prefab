@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7767368707738889104}
   - component: {fileID: 7767368707738889106}
   m_Layer: 0
-  m_Name: Pilvi1 1
+  m_Name: Pilvi1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7767368707738889111}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 22ff131981015a84da923bcae98ba0c2, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

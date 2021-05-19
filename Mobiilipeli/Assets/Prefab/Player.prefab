@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 7083931855125634087}
   - component: {fileID: 326741373}
   - component: {fileID: 326741370}
+  - component: {fileID: 7421580541162153982}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -248,3 +249,17 @@ MonoBehaviour:
   maxHealth: 3
   currentHealth: 3
   healthText: {fileID: 0}
+--- !u!114 &7421580541162153982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083931855125634082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ab51874ef180842a7998521da18c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1594423579}
+  bulletPrefab: {fileID: 601258559026189769, guid: d8b27777b40c9544abc80c6ce8c4a27e, type: 3}

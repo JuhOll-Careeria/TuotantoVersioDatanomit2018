@@ -11,4 +11,5 @@ public class CameraFollow : MonoBehaviour
     {
         transform.position = new Vector3(Player.position.x + offset.x, Player.position.y + offset.y, offset.z); // Camera follows the player with specified offset position
     }
+
 }

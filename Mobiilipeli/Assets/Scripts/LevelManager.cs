@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
         else if (Instance != this)
             Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour
     {
         MobileHealthController.Instance.Health();
 
+        score = score - 300;
 
         Player.transform.position = respawnPoint.position;
     }

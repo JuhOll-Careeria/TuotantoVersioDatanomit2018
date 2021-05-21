@@ -24,7 +24,7 @@ public class PlayerMoment : MonoBehaviour
     IEnumerator dashCoroutine;
 
     //LevelManager lm;
-    private LevelManager lm;
+    LevelManager lm;
 
 
     private void Awake()
@@ -37,7 +37,7 @@ public class PlayerMoment : MonoBehaviour
 
         //DontDestroyOnLoad(gameObject);
 
-       //evelManager.Instance.Player = this;
+       //LevelManager.Instance.Player = this;
     }
 
     void Start()
@@ -181,6 +181,7 @@ public class PlayerMoment : MonoBehaviour
         if (collision.CompareTag("door"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Destroy(gameObject);
         }
     }
 

@@ -17,7 +17,7 @@ TagManager:
   - Player
   - Enemy
   - Obstacle
-  - 
+  - BackGround
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 2912967581
     locked: 0

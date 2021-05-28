@@ -172,6 +172,14 @@ public class PlayerMoment : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "trampoline")
+        {
+            SoundManager.PlaySound("Trampoliini");
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("coin"))

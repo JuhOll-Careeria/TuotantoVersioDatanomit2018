@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ void Start()
         trambolineSound = Resources.Load<AudioClip>("Trampoliini");
         deathSound = Resources.Load<AudioClip>("Kuolema");
         dashSound = Resources.Load<AudioClip>("Dash");
-        enemySound = Resources.Load<AudioClip>("Ampiainen Bzzz");
+        enemySound = Resources.Load<AudioClip>("AmpiainenBzzz");
         jumpSound = Resources.Load<AudioClip>("Hyppy");
         shootSound = Resources.Load<AudioClip>("Shoot");
 
@@ -48,7 +49,7 @@ void Start()
             case "Shoot":
                 audioSrc.PlayOneShot(shootSound);
                 break;
-            case "Ampiainen Bzzz":
+            case "AmpiainenBzzz"://
                 audioSrc.PlayOneShot(enemySound);
                 break;
 

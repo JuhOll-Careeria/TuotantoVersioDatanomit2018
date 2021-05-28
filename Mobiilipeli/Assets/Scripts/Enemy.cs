@@ -19,8 +19,10 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
 
-        if(health <= 0)
+
+        if (health <= 0)
         {
+            SoundManager.PlaySound("AmpiainenBzzz");
             Die();
         }
     }

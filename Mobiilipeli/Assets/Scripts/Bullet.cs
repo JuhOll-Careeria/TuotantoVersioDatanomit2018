@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour
         if(enemy != null)
         {
             enemy.TakeDamage(damage);
+            SoundManager.PlaySound("AmpiainenBzzz");
         }
         Destroy(gameObject);
     }

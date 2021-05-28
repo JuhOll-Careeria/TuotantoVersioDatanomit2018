@@ -125,6 +125,7 @@ public class PlayerMoment : MonoBehaviour
     {
         if (isGrounded)
         {
+            SoundManager.PlaySound("Hyppy");
             animator.SetTrigger("TakeOff");
             myBody.velocity += jumpVelocity * Vector2.up;
         }
@@ -161,6 +162,7 @@ public class PlayerMoment : MonoBehaviour
     {
         if(canDash == true)
         {
+            SoundManager.PlaySound("Dash");
             if (dashCoroutine != null)
             {
                 StopCoroutine(dashCoroutine);
@@ -174,6 +176,7 @@ public class PlayerMoment : MonoBehaviour
     {
         if (collision.CompareTag("coin"))
         {
+            SoundManager.PlaySound("Mansikka");
             Destroy(collision.gameObject);
             lm.score += 100;
         }

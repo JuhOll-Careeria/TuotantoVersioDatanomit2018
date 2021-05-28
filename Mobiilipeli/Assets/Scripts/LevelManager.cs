@@ -15,7 +15,6 @@ public class LevelManager : MonoBehaviour
     public int score;
 
     public Text ScoreText;
-
     private void Awake()
     {
         if (Instance == null)
@@ -26,7 +25,6 @@ public class LevelManager : MonoBehaviour
 
         //DontDestroyOnLoad(gameObject);
     }
-
     private void Update()
     {
         ScoreText.text = ("Score: " + score);
@@ -34,7 +32,7 @@ public class LevelManager : MonoBehaviour
 
     //public void CoinCollected()
     //{
-        //money += 1;
+    //money += 1;
     //}
 
     public void Respawn()

@@ -16,6 +16,7 @@ public class MobileDamageController : MonoBehaviour
     }
     void Damage()
     {
+        SoundManager.PlaySound("Vahinko");
         healthController.currentHealth = healthController.currentHealth - enemyDamage;
         healthController.UpdateHealth();
     }

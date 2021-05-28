@@ -47,7 +47,7 @@ public class MobileHealthController : MonoBehaviour
     }
     private void Kill()
     {
+        SoundManager.PlaySound("Kuolema");
         LevelManager.Instance.Respawn();
-        
     }
 }

@@ -28,6 +28,11 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
         ScoreText.text = ("Score: " + score);
+
+        if(score <= 0)
+        {
+            score = 0;
+        }
     }
 
     //public void CoinCollected()
@@ -40,6 +45,7 @@ public class LevelManager : MonoBehaviour
         MobileHealthController.Instance.Health();
 
         score = score - 300;
+
 
         Player.transform.position = respawnPoint.position;
     }

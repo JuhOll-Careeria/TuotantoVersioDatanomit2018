@@ -183,6 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fde825ff529694e943991c4dd1f19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthController: {fileID: 326741370}
+  healthBag: 1
   animator: {fileID: 7083931855125634087}
   speed: 15
   jumpVelocity: 20

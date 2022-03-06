@@ -9,11 +9,71 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: fa6186ece93fc6b4783b9891423ce4aa
   - enabled: 1
-    path: Assets/Scenes/GameLvl1.unity
+    path: Assets/Scenes/LvlMap.unity
+    guid: 727c41b35f3d02b488ee4e46331381d5
+  - enabled: 1
+    path: Assets/Scenes/Levels/1PeltoLevelit/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/GameLvl2.unity
+    path: Assets/Scenes/Levels/1PeltoLevelit/Level1End.unity
+    guid: 83773bf687cdfe94badaa596687a3862
+  - enabled: 1
+    path: Assets/Scenes/Levels/1PeltoLevelit/Level2.unity
     guid: 5729c731bc9c3a740a99e2e4b14f5b43
+  - enabled: 1
+    path: Assets/Scenes/Levels/1PeltoLevelit/Level2End.unity
+    guid: 27ae0b7f2ca6bf744b29a2ee48454e86
+  - enabled: 1
+    path: Assets/Scenes/Levels/1PeltoLevelit/Level3.unity
+    guid: 20aa60007d8a5454b9b69656e4f956de
+  - enabled: 1
+    path: Assets/Scenes/Levels/1PeltoLevelit/Level3End.unity
+    guid: e0c9a2c545a456f47811baba8e253679
+  - enabled: 1
+    path: Assets/Scenes/Levels/1PeltoLevelit/Level4.unity
+    guid: aae4a0e65f964934a987b4f3f79a2562
+  - enabled: 1
+    path: Assets/Scenes/Levels/1PeltoLevelit/Level4End.unity
+    guid: 4b0657cc8112806488e6037289afad10
+  - enabled: 1
+    path: Assets/Scenes/Levels/1PeltoLevelit/Level5.unity
+    guid: 887b1d1109785b64ab3634a57af82115
+  - enabled: 1
+    path: Assets/Scenes/Levels/1PeltoLevelit/Level5End.unity
+    guid: ad89e66f4ee6d0b4eb8b16c409342d1e
+  - enabled: 1
+    path: Assets/Scenes/Levels/2TaloLevelit/Level6 Pre.unity
+    guid: 199192e4247a148458eeb42890e3b81f
+  - enabled: 1
+    path: Assets/Scenes/Levels/2TaloLevelit/Level6.unity
+    guid: a94aa9c79562ddc48a9063f716b110d4
+  - enabled: 1
+    path: Assets/Scenes/Levels/2TaloLevelit/Level6End.unity
+    guid: e43f913f2e78eb24ca78bea6f918b90b
+  - enabled: 1
+    path: Assets/Scenes/Levels/2TaloLevelit/Level7.unity
+    guid: 07b527f832f9f9e46a73c297936d3618
+  - enabled: 1
+    path: Assets/Scenes/Levels/2TaloLevelit/Level7End.unity
+    guid: 9b40a53ab70d17f40a07f236330b54b2
+  - enabled: 1
+    path: Assets/Scenes/Levels/2TaloLevelit/Level8.unity
+    guid: 79809dc25845a494cbd3ecb1a6bfc443
+  - enabled: 1
+    path: Assets/Scenes/Levels/2TaloLevelit/Level8End.unity
+    guid: 455292226cae0284fbeb4e0e1e192499
+  - enabled: 1
+    path: Assets/Scenes/Levels/2TaloLevelit/Level9.unity
+    guid: 480d8b2687820124187af2f9f52f5644
+  - enabled: 1
+    path: Assets/Scenes/Levels/2TaloLevelit/Level9End.unity
+    guid: ef3e89cc47818e34a9176498214f13b6
+  - enabled: 1
+    path: Assets/Scenes/Levels/2TaloLevelit/Level10.unity
+    guid: 9302605640e69834491c165f8595ffae
+  - enabled: 1
+    path: Assets/Scenes/Levels/2TaloLevelit/Level10End.unity
+    guid: e72dee22333d969488d812fb767e81e2
   - enabled: 1
     path: Assets/Scenes/GameWon.unity
     guid: 162bd79c1e963ca48979f8bc7f8ba9e0

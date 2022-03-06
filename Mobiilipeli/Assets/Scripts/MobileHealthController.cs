@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading;
 
 public class MobileHealthController : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class MobileHealthController : MonoBehaviour
 
     public float maxHealth;
     public float currentHealth;
+
+    public Animator animator;
+    IEnumerator DeathWaitCoroutine;
 
     [SerializeField] private Text healthText;
 
@@ -29,6 +33,16 @@ public class MobileHealthController : MonoBehaviour
     {
         Health(); 
     }
+
+    private void Update()
+    {
+        if (currentHealth > 3)
+        {
+            currentHealth = 3;
+            UpdateHealth();
+        }
+    }
+
     public void Health()
     {
         currentHealth = maxHealth;
@@ -42,12 +56,20 @@ public class MobileHealthController : MonoBehaviour
         if (currentHealth <= 0)
         {
             Kill();
-            
         }
     }
     private void Kill()
     {
+        animator.SetBool("IsDying", true);
         SoundManager.PlaySound("Kuolema");
+        StartCoroutine(DeathWait());
+    }
+
+    IEnumerator DeathWait()
+    {
+        yield return new WaitForSeconds(1f);
+        animator.SetBool("IsDying", false);
         LevelManager.Instance.Respawn();
     }
+
 }

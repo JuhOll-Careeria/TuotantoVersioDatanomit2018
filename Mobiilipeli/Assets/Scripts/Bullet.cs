@@ -16,9 +16,24 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Enemy enemy = hitInfo.GetComponent<Enemy>();
-        if(enemy != null)
+        EnemyMouse enemyMouse = hitInfo.GetComponent<EnemyMouse>();
+        EnemyTorakka enemyTorakka = hitInfo.GetComponent<EnemyTorakka>();
+        EnemyPieniHaamu enemyPieniHaamu = hitInfo.GetComponent<EnemyPieniHaamu>();
+        if (enemy != null)
         {
             enemy.TakeDamage(damage);
+        }
+        if (enemyMouse != null)
+        {
+            enemyMouse.TakeDamage(damage);
+        }
+        if (enemyTorakka != null)
+        {
+            enemyTorakka.TakeDamage(damage);
+        }
+        if (enemyPieniHaamu != null)
+        {
+            enemyPieniHaamu.TakeDamage(damage);
         }
         Destroy(gameObject);
     }

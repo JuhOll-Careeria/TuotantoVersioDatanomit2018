@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMoment : MonoBehaviour
 {
+    [SerializeField] private MobileHealthController healthController;
+    [SerializeField] private float healthBag;
+
     public static PlayerMoment Instance = null;
 
     public Animator animator;
@@ -25,6 +28,7 @@ public class PlayerMoment : MonoBehaviour
 
     //LevelManager lm;
     LevelManager lm;
+    //LevelLoader ll;
 
 
     private void Awake()
@@ -189,11 +193,20 @@ public class PlayerMoment : MonoBehaviour
             lm.score += 100;
         }
 
-        if (collision.CompareTag("door"))
+        if (collision.CompareTag("hp"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            Destroy(gameObject);
+            SoundManager.PlaySound("Mansikka");
+            Destroy(collision.gameObject);
+            healthController.currentHealth = healthController.currentHealth + healthBag;
+            healthController.UpdateHealth();
         }
+
+
+        //if (collision.CompareTag("door"))
+        //{
+        //  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //Destroy(gameObject);
+        //}
     }
 
 

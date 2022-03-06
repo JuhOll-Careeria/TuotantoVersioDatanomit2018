@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
+        SoundManager.PlaySound("Shoot");
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 }

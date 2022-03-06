@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip playerHitSound, shootSound, jumpSound, enemySound, dashSound, deathSound, trambolineSound, coinSound;
+    public static AudioClip playerHitSound, shootSound, jumpSound, enemySound, dashSound, deathSound, trambolineSound, coinSound, rottaSound, torakkaSound, pieniHaamu, isoHaamu;
     static AudioSource audioSrc;
 
 
@@ -20,6 +20,10 @@ void Start()
         enemySound = Resources.Load<AudioClip>("AmpiainenBzzz");
         jumpSound = Resources.Load<AudioClip>("Hyppy");
         shootSound = Resources.Load<AudioClip>("Shoot");
+        rottaSound = Resources.Load<AudioClip>("Rotta");
+        torakkaSound = Resources.Load<AudioClip>("Torakka");
+        pieniHaamu = Resources.Load<AudioClip>("PieniHaamu");
+        isoHaamu = Resources.Load<AudioClip>("IsoHaamu");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -34,7 +38,7 @@ void Start()
             case "Mansikka"://
                 audioSrc.PlayOneShot(coinSound);
                 break;
-            case "Trampoliini":
+            case "Trampoliini"://
                 audioSrc.PlayOneShot(trambolineSound);
                 break;
             case "Kuolema"://
@@ -46,12 +50,25 @@ void Start()
             case "Hyppy"://
                 audioSrc.PlayOneShot(jumpSound);
                 break;
-            case "Shoot":
+            case "Shoot"://
                 audioSrc.PlayOneShot(shootSound);
                 break;
             case "AmpiainenBzzz"://
                 audioSrc.PlayOneShot(enemySound);
                 break;
+            case "Rotta"://
+                audioSrc.PlayOneShot(rottaSound);
+                break;
+            case "Torakka"://
+                audioSrc.PlayOneShot(torakkaSound);
+                break;
+            case "PieniHaamu"://
+                audioSrc.PlayOneShot(pieniHaamu);
+                break;
+            case "IsoHaamu"://
+                audioSrc.PlayOneShot(isoHaamu);
+                break;
+
 
         }
     }
